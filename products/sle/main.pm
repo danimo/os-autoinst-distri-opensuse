@@ -949,6 +949,10 @@ elsif (get_var('HPC')) {
 elsif (get_var('SYSTEMD_TESTSUITE')) {
     load_systemd_patches_tests;
 }
+elsif (get_var('DRACUT_TESTSUITE')) {
+    boot_hdd_image;
+    loadtest 'dracut_testsuite/test_01_basic';
+}
 elsif (get_var('VALIDATE_PCM_PATTERN')) {
     load_public_cloud_patterns_validation_tests;
 }
