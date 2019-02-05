@@ -1085,7 +1085,7 @@ else {
             loadtest "rt/rt_is_realtime";
             loadtest "rt/rt_devel_packages";
             loadtest "rt/rt_peak_pci";
-            loadtest "rt/rt_preempt_test";
+            loadtest "rt/rt_tests";
             loadtest "rt/kmp_modules";
             set_var('INSTALLONLY', 1);
         }
