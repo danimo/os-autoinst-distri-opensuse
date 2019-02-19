@@ -46,8 +46,12 @@ sub run {
     assert_screen("dracut-root-block-success", 80);
     sleep 5;
     #cleanup previous test and prepare next one
-    select_console 'root-console';
-    assert_screen("text-logged-in-root", 120);
+    assert_screen("linux-login", 180);
+    type_string "root\n";
+    wait_still_screen 3;
+    type_password;
+    wait_still_screen 3;
+    send_key 'ret';
     assert_script_run 'cd /var/opt/dracut-tests/TEST-01-BASIC';
     assert_script_run './test.sh --clean, 20';
     assert_script_run 'cd /var/opt/dracut-tests/TEST-02-SYSTEMD';
